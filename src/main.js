@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueKonva from 'vue-konva'
+import store from './store'
 
 import './assets/scss/app.scss'
 
@@ -13,4 +14,5 @@ Vue.use(IconsPlugin)
 
 new Vue({
   render: h => h(App),
+  store,
 }).$mount('#app')

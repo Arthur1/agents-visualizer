@@ -1,23 +1,23 @@
 <template>
   <div class="d-flex flex-column vh-100">
     <main>
-      <main-box></main-box>
+      <main-area></main-area>
     </main>
     <footer class="mt-auto">
-      <footer-box></footer-box>
+      <footer-area></footer-area>
     </footer>
   </div>
 </template>
 
 <script>
-import MainBox from '@/components/MainBox.vue'
-import FooterBox from '@/components/FooterBox.vue'
+import MainArea from '@/components/MainArea.vue'
+import FooterArea from '@/components/FooterArea.vue'
 
 export default {
   name: 'App',
   components: {
-    MainBox,
-    FooterBox,
+    MainArea,
+    FooterArea,
   },
 }
 </script>
