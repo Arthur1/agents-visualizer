@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-3">
     <b-form @submit.prevent="loadFiles">
       <b-form-row>
         <b-col cols="12" md="6">
@@ -33,7 +33,7 @@
           </b-form-group>
         </b-col>
         <b-col cols="12">
-          <b-button type="submit" variant="primary">読み込む</b-button>
+          <b-button type="submit" variant="primary"><b-icon-arrow-down-circle /> 読み込む</b-button>
         </b-col>
       </b-form-row>
     </b-form>

@@ -1,5 +1,6 @@
 <template>
   <div v-if="$store.state.input.M">
+    <h2 class="text-secondary mt-4">出力の視覚化</h2>
     <v-stage :config="configKonva">
       <v-layer>
         <v-line
@@ -47,12 +48,13 @@
         variant="dark"
         :disabled="$store.state.currentCycle <= 0"
         @click="goPrev"
-      >Prev</b-button>
+        class="mr-3"
+      ><b-icon-caret-left-square /> Prev</b-button>
       <b-button
         variant="info"
         :disabled="$store.state.currentCycle >= $store.state.input.T"
         @click="goNext"
-      >Next</b-button><br>
+      >Next <b-icon-caret-right-square /></b-button><br>
       Cycle {{ $store.state.currentCycle }} / {{ $store.state.input.T }}
     </div>
   </div>
@@ -180,13 +182,6 @@ export default {
       await this.$store.dispatch('prevCycle')
     },
   },
-  /*
-  watch: {
-    agents(value, old) {
-
-    }
-  },
-  */
 }
 </script>
 <style>

@@ -84,7 +84,7 @@ export default {
         }
         commit('addAgent', agent)
       }
-      commit('setS', Number(scanner.next().value));
+      commit('setS', Number(scanner.next().value))
       switch (state.S) {
         case 1:
           commit('initPNames')
@@ -92,21 +92,21 @@ export default {
           while (true) {
             let itrObj = scanner.next()
             if (itrObj.done) break
-            commit('addPNames', itrObj.value);
+            commit('addPNames', itrObj.value)
           }
-          break;
+          break
         case 2:
           commit('initPCoordinates')
           // eslint-disable-next-line no-constant-condition
           while (true) {
             let itrObj = scanner.next()
             if (itrObj.done) break
-            commit('addXCoordinates', {
+            commit('addPCoordinates', {
               x: Number(itrObj.value),
-              y: Number(scanner.next()),
+              y: Number(scanner.next().value),
             })
           }
-          break;
+          break
       }
     },
   },
