@@ -49,10 +49,9 @@ export default {
   },
   methods: {
     async loadFiles() {
-      await Promise.all([
-        this.parseInputFile(),
-        this.parseOutputFile(),
-      ])
+      await this.$store.dispatch('resetCycle')
+      await this.parseInputFile()
+      await this.parseOutputFile()
     },
     async parseInputFile() {
       const text = await this.inputFile.text()
@@ -60,7 +59,13 @@ export default {
     },
     async parseOutputFile() {
       const text = await this.outputFile.text()
-      console.log(text.split(/\s+/))
+      const T = this.$store.state.input.T
+      const A = this.$store.state.input.A
+      await this.$store.dispatch('output/scan', {
+        text,
+        T,
+        A,
+      })
     },
   },
 }

@@ -1,3 +1,5 @@
+import randomColor from 'randomcolor'
+
 export default {
   namespaced: true,
   state: {
@@ -58,7 +60,6 @@ export default {
       commit('setT', Number(scanner.next().value))
       commit('setI', Number(scanner.next().value))
       commit('initAgents')
-      console.log(state.A)
       for (let j = 0; j < state.A; j++) {
         const agent = {
           name: scanner.next().value,
@@ -71,6 +72,9 @@ export default {
           t: Number(scanner.next().value),
           p: Number(scanner.next().value),
           targets: [],
+          color: randomColor({
+            luminosity: 'dark',
+          }),
         }
         for (let k = 0; k < agent.p; k++) {
           agent.targets.push({
@@ -104,6 +108,6 @@ export default {
           }
           break;
       }
-    }
+    },
   },
 }
